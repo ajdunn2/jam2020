@@ -44,11 +44,11 @@ func make_rando_pieces():
 func add_rando_pieces(count, ran):
 	var scene_piece_instance = scene_piece.instance()
 	scene_piece_instance.set_name("scene")
-	scene_piece_instance.global_position.x = count * 200 + 500
+	scene_piece_instance.global_position.x = count * 300 + 500
 	scene_piece_instance.global_position.y = 300
 	scene_piece_instance.change_piece(ran)
 	scene_piece_instance.hide()
-	scene_piece_instance.time_til_fade = 3.0
+	scene_piece_instance.time_til_fade = 1.1 * count
 	add_child(scene_piece_instance)
 	
 	
