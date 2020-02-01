@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Jam"
-run/main_scene="res://src/Screens/Overlay/Main.tscn"
+run/main_scene="res://src/Screens/Overlay/Machine.tscn"
 config/icon="res://icon.png"
 
 [autoload]
