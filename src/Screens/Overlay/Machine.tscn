@@ -85,6 +85,72 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id=5]
 shader = SubResource( 4 )
 
+[sub_resource type="Animation" id=6]
+resource_name = "tv"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationCamera/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.65, 0.65 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationCamera/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 674.942, 369.308 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationCamera/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1.6245, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationCamera/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 3.24901, 1 ),
+"update": 0,
+"values": [ Vector2( 674.942, 369.308 ), Vector2( 960, 540 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationCamera/Camera2D:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.812253, 1 ),
+"update": 0,
+"values": [ 2.6, 0.0 ]
+}
+
 [node name="Machine" type="Node"]
 script = ExtResource( 6 )
 
@@ -135,5 +201,14 @@ position = Vector2( 0, 4.83008 )
 self_modulate = Color( 1, 1, 1, 1 )
 
 [node name="Touch" parent="." instance=ExtResource( 19 )]
+
+[node name="AnimationCamera" type="AnimationPlayer" parent="."]
+anims/tv = SubResource( 6 )
+anims/tv_to_room = SubResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="AnimationCamera"]
+position = Vector2( 960, 540 )
+rotating = true
+current = true
 
 [editable path="Clara"]
