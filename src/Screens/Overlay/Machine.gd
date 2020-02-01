@@ -10,6 +10,7 @@ extends Node
 func _ready():
 	$Glow_02.play()
 	$Glow_03.play()
+	$Glow_04.play()
 	pass # Replace with function body.
 
 
