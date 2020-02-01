@@ -80,3 +80,18 @@ position = Vector2( -18.7305, 11.0681 )
 scale = Vector2( 10, 10 )
 shape = SubResource( 2 )
 [connection signal="selected_moon" from="." to="." method="_on_Touch_selected_moon"]
+[connection signal="input_event" from="MoonBtn/MoonArea2D" to="." method="_on_MoonArea2D_input_event"]
+[connection signal="mouse_entered" from="MoonBtn/MoonArea2D" to="." method="_on_MoonArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="MoonBtn/MoonArea2D" to="." method="_on_MoonArea2D_mouse_exited"]
+[connection signal="input_event" from="HeartBtn/HeartArea2D" to="." method="_on_HeartArea2D_input_event"]
+[connection signal="mouse_entered" from="HeartBtn/HeartArea2D" to="." method="_on_HeartArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="HeartBtn/HeartArea2D" to="." method="_on_HeartArea2D_mouse_exited"]
+[connection signal="input_event" from="SquareBtn/SquareArea2D" to="." method="_on_SquareArea2D_input_event"]
+[connection signal="mouse_entered" from="SquareBtn/SquareArea2D" to="." method="_on_SquareArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="SquareBtn/SquareArea2D" to="." method="_on_SquareArea2D_mouse_exited"]
+[connection signal="input_event" from="StarBtn/StarArea2D" to="." method="_on_StarArea2D_input_event"]
+[connection signal="mouse_entered" from="StarBtn/StarArea2D" to="." method="_on_StarArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="StarBtn/StarArea2D" to="." method="_on_StarArea2D_mouse_exited"]
+[connection signal="input_event" from="TearBtn/TearArea2D" to="." method="_on_TearArea2D_input_event"]
+[connection signal="mouse_entered" from="TearBtn/TearArea2D" to="." method="_on_TearArea2D_mouse_entered"]
+[connection signal="mouse_exited" from="TearBtn/TearArea2D" to="." method="_on_TearArea2D_mouse_exited"]
