@@ -25,15 +25,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "New Anim",
-"speed": 2.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 2.0
 } ]
 
 [sub_resource type="SpriteFrames" id=2]

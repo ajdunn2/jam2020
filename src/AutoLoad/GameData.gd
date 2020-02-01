@@ -1,6 +1,7 @@
 extends Node
 
 enum PIECES {HEART, MOON, SQUARE, STAR, TEAR}
+
 var hand_cursor2 = load("res://src/assets/final/CURSOR_HAND_1.png")
 var hand_cursor = load("res://src/assets/final/CURSOR_HAND_2.png")
 var timer

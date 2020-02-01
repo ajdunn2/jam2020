@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/assets/puzzle/PUZZLE_SHAPES_MOON.png" type="Texture" id=1]
 [ext_resource path="res://src/Screens/Game/Touch.gd" type="Script" id=2]
@@ -6,14 +6,43 @@
 [ext_resource path="res://src/assets/puzzle/PUZZLE_SHAPES_STAR.png" type="Texture" id=4]
 [ext_resource path="res://src/assets/puzzle/PUZZLE_SHAPES_SQUARE.png" type="Texture" id=5]
 [ext_resource path="res://src/assets/puzzle/PUZZLE_SHAPES_TEAR.png" type="Texture" id=6]
+[ext_resource path="res://src/assets/final/CRICLE_green.png" type="Texture" id=7]
 
 [sub_resource type="CanvasItemMaterial" id=1]
-blend_mode = 2
+light_mode = 1
 
 [sub_resource type="CircleShape2D" id=2]
 
 [node name="Touch" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="Circles" type="Node2D" parent="."]
+modulate = Color( 0.333333, 0.733333, 0.952941, 0.533333 )
+
+[node name="moon" type="Sprite" parent="Circles"]
+position = Vector2( 166.742, 891.523 )
+scale = Vector2( 0.630704, 0.626877 )
+texture = ExtResource( 7 )
+
+[node name="heart" type="Sprite" parent="Circles"]
+position = Vector2( 390.742, 891.523 )
+scale = Vector2( 0.630704, 0.626877 )
+texture = ExtResource( 7 )
+
+[node name="square" type="Sprite" parent="Circles"]
+position = Vector2( 606.742, 891.523 )
+scale = Vector2( 0.630704, 0.626877 )
+texture = ExtResource( 7 )
+
+[node name="star" type="Sprite" parent="Circles"]
+position = Vector2( 830.742, 891.523 )
+scale = Vector2( 0.630704, 0.626877 )
+texture = ExtResource( 7 )
+
+[node name="star2" type="Sprite" parent="Circles"]
+position = Vector2( 1046.74, 891.523 )
+scale = Vector2( 0.630704, 0.626877 )
+texture = ExtResource( 7 )
 
 [node name="MoonBtn" type="Sprite" parent="."]
 material = SubResource( 1 )

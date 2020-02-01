@@ -13,11 +13,13 @@ func _process(delta):
 #Moon
 func _on_MoonArea2D_mouse_entered():
 	print("moon enter hover");
+	get_tree().get_root().find_node("MoonBtn", true, false).rotate (deg2rad(-8))
 	pass # Replace with function body.
 
 
 func _on_MoonArea2D_mouse_exited():
 	print("moon remove hover");
+	get_tree().get_root().find_node("MoonBtn", true, false).rotate (deg2rad(8))
 	pass # Replace with function body.
 
 
@@ -32,11 +34,13 @@ func _on_MoonArea2D_input_event(viewport, event, shape_idx):
 
 func _on_TearArea2D_mouse_entered():
 	print("tear enter hover");
+	get_tree().get_root().find_node("TearBtn", true, false).rotate (deg2rad(-8))
 	pass # Replace with function body.
 
 
 func _on_TearArea2D_mouse_exited():
-	print("moon remove hover");
+	print("moon remove hover")
+	get_tree().get_root().find_node("TearBtn", true, false).rotate (deg2rad(8))
 	pass # Replace with function body.
 
 
@@ -50,12 +54,14 @@ func _on_TearArea2D_input_event(viewport, event, shape_idx):
 
 
 func _on_HeartArea2D_mouse_entered():
-	print("heart enter hover");
+	print("heart enter hover")
+	get_tree().get_root().find_node("HeartBtn", true, false).rotate (deg2rad(-8))
 	pass # Replace with function body.
 
 
 func _on_HeartArea2D_mouse_exited():
-	print("heart remove hover");
+	print("heart remove hover")
+	get_tree().get_root().find_node("HeartBtn", true, false).rotate (deg2rad(8))
 	pass # Replace with function body.
 
 
@@ -69,12 +75,14 @@ func _on_HeartArea2D_input_event(viewport, event, shape_idx):
 
 
 func _on_SquareArea2D_mouse_entered():
-	print("square enter hover");
+	print("square enter hover")
+	get_tree().get_root().find_node("SquareBtn", true, false).rotate (deg2rad(-8))
 	pass # Replace with function body.
 
 
 func _on_SquareArea2D_mouse_exited():
-	print("square remove hover");
+	print("square remove hover")
+	get_tree().get_root().find_node("SquareBtn", true, false).rotate (deg2rad(8))
 	pass # Replace with function body.
 
 
@@ -88,12 +96,14 @@ func _on_SquareArea2D_input_event(viewport, event, shape_idx):
 
 
 func _on_StarArea2D_mouse_entered():
-	print("star enter hover");
+	print("star enter hover")
+	get_tree().get_root().find_node("StarBtn", true, false).rotate (deg2rad(-8))
 	pass # Replace with function body.
 
 
 func _on_StarArea2D_mouse_exited():
-	print("star remove hover");
+	print("star remove hover")
+	get_tree().get_root().find_node("StarBtn", true, false).rotate (deg2rad(8))
 	pass # Replace with function body.
 
 
