@@ -8,6 +8,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimationCamera.play("tv_to_room");
+	
 	$Glow_02.play()
 	$Glow_03.play()
 	$Glow_04.play()
@@ -18,3 +20,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
