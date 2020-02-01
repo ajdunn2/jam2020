@@ -3,7 +3,9 @@ class_name Puzzle
 
 # Declare member variables here. Examples:
 var scene_piece = null
-var level = 3
+
+######### START AT LEVEL 1 ###############
+var level = 3 
 export var ai_selected_pieces: = []
 
 # Called when the node enters the scene tree for the first time.
@@ -47,6 +49,7 @@ func add_rando_pieces(count, ran):
 	
 	var y_line = 0 if (count < 5) else 300
 	var x_line = 350 if (count < 5) else 350 - (5 * 300)
+	var extra = 1.0
 	
 	scene_piece.set_meta("type", "gamer")
 	scene_piece_instance.set_name("scene")
@@ -54,7 +57,7 @@ func add_rando_pieces(count, ran):
 	scene_piece_instance.global_position.y = 300 + y_line
 	scene_piece_instance.change_piece(ran)
 	scene_piece_instance.hide()
-	scene_piece_instance.time_til_fade = 1.1 * count
+	scene_piece_instance.time_til_fade = 1.1 * count + extra
 	$Game.add_child(scene_piece_instance)
 
 	
