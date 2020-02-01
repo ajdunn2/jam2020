@@ -8,7 +8,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Clara_blink.play()
+	$Clara_blink.play("Clara_blink")
+	#$Clara_blink.play("Clara_wrong")
+	#$Clara_blink.play("Clara_correct")
 	pass # Replace with function body.
 
 
