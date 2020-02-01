@@ -3,8 +3,8 @@ class_name Puzzle
 
 # Declare member variables here. Examples:
 var scene_piece = null
-
 var level = 3
+export var ai_selected_pieces: = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,6 +23,8 @@ func start_new_level(num):
 func _process(delta):
 	if Input.is_action_pressed("ui_up"):
 		print("right")
+	# algo
+	compare_the_selection()
 
 
 func make_rando_pieces():
@@ -42,6 +44,8 @@ func make_rando_pieces():
 
 
 func add_rando_pieces(count, ran):
+	ai_selected_pieces.append(ran)
+	
 	var scene_piece_instance = scene_piece.instance()
 	
 	var y_line = 0 if (count < 5) else 300
@@ -55,3 +59,11 @@ func add_rando_pieces(count, ran):
 	scene_piece_instance.hide()
 	scene_piece_instance.time_til_fade = 1.1 * count
 	$Game.add_child(scene_piece_instance)
+
+
+func compare_the_selection():
+	if (GameData.current_selected_pieces.size() == level):
+		if(GameData.current_selected_pieces == ai_selected_pieces):
+			print("CORRECT")
+		else:
+			print("WRONG")
