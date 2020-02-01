@@ -4,7 +4,7 @@ class_name Puzzle
 # Declare member variables here. Examples:
 var scene_piece = null
 
-var level = 1
+var level = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

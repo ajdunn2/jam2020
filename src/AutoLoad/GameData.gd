@@ -8,6 +8,8 @@ extends Node
 enum PIECES {HEART, MOON, SQUARE, STAR, TEAR}
 var hand_cursor = load("res://src/assets/final/CURSOR_HAND_1.png")
 
+export var current_selected_pieces = [];
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
