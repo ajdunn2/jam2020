@@ -25,3 +25,4 @@ self_modulate = Color( 1, 1, 1, 0.545098 )
 position = Vector2( 1432.07, 907.286 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
+[node name="Game" type="Node2D" parent="."]
