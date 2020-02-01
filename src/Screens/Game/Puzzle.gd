@@ -37,17 +37,6 @@ func _process(delta):
 
 func make_rando_pieces():
 	var ran = randi() % GameData.PIECES.size()
-#	match ran:
-#		GameData.PIECES.HEART:
-#			print("my heart")
-#		GameData.PIECES.MOON:
-#			print("my moon")
-#		GameData.PIECES.SQUARE:
-#			print("my square")
-#		GameData.PIECES.STAR:
-#			print("my star")
-#		GameData.PIECES.TEAR:
-#			print("my tear")
 	return ran
 
 
@@ -67,6 +56,22 @@ func add_rando_pieces(count, ran):
 	scene_piece_instance.hide()
 	scene_piece_instance.time_til_fade = 1.1 * count
 	$Game.add_child(scene_piece_instance)
+
+	
+
+func sound_for_piece(ran):
+	match ran:
+		GameData.PIECES.HEART:
+			$AudioStuff/HeartAudio.play()
+		GameData.PIECES.MOON:
+			$AudioStuff/MoonAudio.play()
+		GameData.PIECES.SQUARE:
+			$AudioStuff/SquareAudio.play()
+		GameData.PIECES.STAR:
+			$AudioStuff/StarAudio.play()
+		GameData.PIECES.TEAR:
+			$AudioStuffAudioStuff/TearAudio.play()
+	pass
 
 
 func compare_the_selection():

@@ -47,6 +47,21 @@ func change_drawn(image):
 func fade_up():
 	yield(get_tree().create_timer(time_til_fade), "timeout")
 	$AnimationPlayer.play("fade_in")
+	sound_for_piece()
+	
+func sound_for_piece():
+	match piece:
+		GameData.PIECES.HEART:
+			get_tree().get_root().find_node("AudioStuff", true, false).get_node("HeartAudio").play()
+		GameData.PIECES.MOON:
+			get_tree().get_root().find_node("AudioStuff", true, false).get_node("MoonAudio").play()
+		GameData.PIECES.SQUARE:
+			get_tree().get_root().find_node("AudioStuff", true, false).get_node("SquareAudio").play()
+		GameData.PIECES.STAR:
+			get_tree().get_root().find_node("AudioStuff", true, false).get_node("StarAudio").play()
+		GameData.PIECES.TEAR:
+			get_tree().get_root().find_node("AudioStuff", true, false).get_node("TearAudio").play()
+	pass
 
 func hide():
 	$ShapePiece.visible = false
