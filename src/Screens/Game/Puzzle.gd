@@ -9,17 +9,25 @@ export var ai_selected_pieces: = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	scene_piece = preload("res:///src/Pieces/Piece.tscn")
+	start_new_level(1)
+
+
+func start_new_level(num):
+	level  = num
+	
+	for i in $Game.get_children():
+		i.queue_free()
+		
+	ai_selected_pieces = []
+	GameData.current_selected_pieces = []
+	
 	for i in range(level):
 		var ran = make_rando_pieces()
 		add_rando_pieces(i, ran)
 
 
-func start_new_level(num):
-	level  = num
-	var getType = self.get_meta("type") # get the type of myNode
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# warning-ignore:unused_argument
 func _process(delta):
 	if Input.is_action_pressed("ui_up"):
 		print("right")
@@ -64,6 +72,18 @@ func add_rando_pieces(count, ran):
 func compare_the_selection():
 	if (GameData.current_selected_pieces.size() == level):
 		if(GameData.current_selected_pieces == ai_selected_pieces):
-			print("CORRECT")
+			level_complete(true)
 		else:
-			print("WRONG")
+			level_complete(false)
+
+
+func level_complete(correct):
+	if (correct):
+		level = level + 1
+		# do not go above 10
+		start_new_level(level)
+	else:
+		level -= 1
+		# do not go below 1
+		start_new_level(level)
+
