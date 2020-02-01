@@ -105,6 +105,7 @@ frames = SubResource( 6 )
 animation = "New Anim"
 
 [node name="Glow_04" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.572549 )
 position = Vector2( 1434.81, 331.664 )
 frames = SubResource( 1 )
 animation = "Glow_04"
@@ -116,6 +117,7 @@ frames = SubResource( 2 )
 animation = "Glow_03"
 
 [node name="Glow_02" type="AnimatedSprite" parent="."]
+self_modulate = Color( 0.992157, 0.701961, 0.701961, 0.607843 )
 position = Vector2( 960, 540 )
 frames = SubResource( 3 )
 animation = "glow_02"
@@ -127,7 +129,6 @@ rotation = 0.0453786
 scale = Vector2( 0.6, 0.6 )
 
 [node name="Clara" parent="." instance=ExtResource( 17 )]
-visible = false
 material = SubResource( 5 )
 position = Vector2( 0, 4.83008 )
 
