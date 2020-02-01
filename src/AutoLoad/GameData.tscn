@@ -4,3 +4,5 @@
 
 [node name="GameData" type="Node"]
 script = ExtResource( 1 )
+
+[node name="ClickTimer" type="Timer" parent="."]
