@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tear.wav-b7f16d5fc2109bac9e7643d6c1209b3f.sample"
+
+[deps]
+
+source_file="res://src/assets/final/sounds/tear.wav"
+dest_files=[ "res://.import/tear.wav-b7f16d5fc2109bac9e7643d6c1209b3f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
