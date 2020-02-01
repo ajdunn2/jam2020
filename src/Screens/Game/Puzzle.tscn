@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Screens/Game/Puzzle.gd" type="Script" id=1]
-[ext_resource path="res://src/assets/final/PUZZLE_FRAME_01.png" type="Texture" id=2]
 [ext_resource path="res://src/assets/final/MINDREPAIR_LOGO_2.png" type="Texture" id=3]
 [ext_resource path="res://src/assets/final/PUZZLE_FRAME.png" type="Texture" id=4]
 [ext_resource path="res://src/assets/final/sounds/square.wav" type="AudioStream" id=5]
@@ -22,10 +21,6 @@ color = Color( 0.698039, 0.976471, 0.792157, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Sprite" type="Sprite" parent="Screen"]
-position = Vector2( 960, 540 )
-texture = ExtResource( 2 )
 
 [node name="Game_logo" type="Sprite" parent="Screen"]
 self_modulate = Color( 1, 1, 1, 0.545098 )
