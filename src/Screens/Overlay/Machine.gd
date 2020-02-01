@@ -11,7 +11,7 @@ var gameState = gameStates.HOME
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	if (gameState == gameStates.HOME):
+	if (gameStates.HOME):
 		$AnimationCamera.play("tv");
 	
 	$Glow_02.play()

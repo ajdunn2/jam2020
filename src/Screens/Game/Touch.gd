@@ -26,6 +26,7 @@ func _on_MoonArea2D_input_event(viewport, event, shape_idx):
 		print("moon clicked")
 		GameData.current_selected_pieces.append(GameData.PIECES.MOON)
 		print(GameData.current_selected_pieces);
+		get_tree().get_root().find_node("AudioStuff", true, false).get_node("MoonAudio").play()
 	pass # Replace with function body.
 
 
@@ -44,6 +45,7 @@ func _on_TearArea2D_input_event(viewport, event, shape_idx):
 		print("tear clicked")
 		GameData.current_selected_pieces.append(GameData.PIECES.TEAR)
 		print(GameData.current_selected_pieces);
+		get_tree().get_root().find_node("AudioStuff", true, false).get_node("TearAudio").play()
 	pass # Replace with function body.
 
 
@@ -62,6 +64,7 @@ func _on_HeartArea2D_input_event(viewport, event, shape_idx):
 		print("heart clicked")
 		GameData.current_selected_pieces.append(GameData.PIECES.HEART)
 		print(GameData.current_selected_pieces);
+		get_tree().get_root().find_node("AudioStuff", true, false).get_node("HeartAudio").play()
 	pass # Replace with function body.
 
 
@@ -80,6 +83,7 @@ func _on_SquareArea2D_input_event(viewport, event, shape_idx):
 		print("square clicked")
 		GameData.current_selected_pieces.append(GameData.PIECES.SQUARE)
 		print(GameData.current_selected_pieces);
+		get_tree().get_root().find_node("AudioStuff", true, false).get_node("SquareAudio").play()
 	pass # Replace with function body.
 
 
@@ -98,4 +102,5 @@ func _on_StarArea2D_input_event(viewport, event, shape_idx):
 		print("square clicked")
 		GameData.current_selected_pieces.append(GameData.PIECES.STAR)
 		print(GameData.current_selected_pieces);
+		get_tree().get_root().find_node("AudioStuff", true, false).get_node("StarAudio").play()
 	pass # Replace with function body.

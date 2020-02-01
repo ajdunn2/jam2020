@@ -3,7 +3,7 @@ class_name Piece
 
 var piece = null
 
-var time_til_fade = 0.0
+var time_til_fade = 2.0
 
 var tear = preload("res://src/assets/puzzle/PUZZLE_SHAPES_TEAR.png")
 var heart = preload("res://src/assets/puzzle/PUZZLE_SHAPES_HEART.png")
