@@ -79,4 +79,3 @@ position = Vector2( -18.7305, 11.0681 )
 scale = Vector2( 10, 10 )
 shape = SubResource( 2 )
 [connection signal="selected_moon" from="." to="." method="_on_Touch_selected_moon"]
-[connection signal="input_event" from="MoonBtn/MoonArea2D" to="." method="_on_MoonArea2D_input_event"]

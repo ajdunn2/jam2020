@@ -55,16 +55,3 @@ func add_rando_pieces(count, ran):
 	scene_piece_instance.hide()
 	scene_piece_instance.time_til_fade = 1.1 * count
 	$Game.add_child(scene_piece_instance)
-
-
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed:
-			print("Left button was clicked at ", event.position)
-		if event.button_index == BUTTON_WHEEL_UP and event.pressed:
-			print("Wheel up")
-
-
-func _on_Touch_selected_moon():
-	print("user selected moon okay?")
-	pass # Replace with function body.

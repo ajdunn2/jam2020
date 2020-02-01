@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Screens/Game/Puzzle.gd" type="Script" id=1]
 [ext_resource path="res://src/assets/final/PUZZLE_FRAME_01.png" type="Texture" id=2]
 [ext_resource path="res://src/assets/final/MINDREPAIR_LOGO_2.png" type="Texture" id=3]
 [ext_resource path="res://src/assets/final/PUZZLE_FRAME.png" type="Texture" id=4]
-[ext_resource path="res://src/Screens/Game/Touch.tscn" type="PackedScene" id=5]
 
 [node name="Puzzle" type="Node2D"]
 script = ExtResource( 1 )
@@ -35,7 +34,3 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 4 )
 
 [node name="Game" type="Node2D" parent="."]
-
-[node name="Touch" parent="." instance=ExtResource( 5 )]
-position = Vector2( 151.321, 916.411 )
-[connection signal="selected_moon" from="Touch" to="." method="_on_Touch_selected_moon"]
