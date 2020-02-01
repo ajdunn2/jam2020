@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -8,9 +8,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Glow_02.play()
-	$Glow_03.play()
-	$Glow_04.play()
+	$Clara_blink.play()
 	pass # Replace with function body.
 
 

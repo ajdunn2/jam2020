@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SPR_clara00001.png-c452602bdf5778c99ca7bd389d6ee4c5.stex"
+path="res://.import/SPR_clara_blink00006.png-163acfe1175ffb7f91cfac149d327e97.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/final/SPR_clara00001.png"
-dest_files=[ "res://.import/SPR_clara00001.png-c452602bdf5778c99ca7bd389d6ee4c5.stex" ]
+source_file="res://src/assets/final/SPR_clara_blink00006.png"
+dest_files=[ "res://.import/SPR_clara_blink00006.png-163acfe1175ffb7f91cfac149d327e97.stex" ]
 
 [params]
 

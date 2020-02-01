@@ -1,0 +1,31 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://src/assets/final/SPR_clara_blink00006.png" type="Texture" id=1]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00000.png" type="Texture" id=2]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00001.png" type="Texture" id=3]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00002.png" type="Texture" id=4]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00003.png" type="Texture" id=5]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00004.png" type="Texture" id=6]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00005.png" type="Texture" id=7]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00011.png" type="Texture" id=8]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00008.png" type="Texture" id=9]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00007.png" type="Texture" id=10]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00009.png" type="Texture" id=11]
+[ext_resource path="res://src/assets/final/SPR_clara_blink00010.png" type="Texture" id=12]
+[ext_resource path="res://src/Screens/Clara.gd" type="Script" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Clara_blink",
+"speed": 5.0
+} ]
+
+[node name="Clara" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="Clara_blink" type="AnimatedSprite" parent="."]
+position = Vector2( 1026.56, 571.41 )
+frames = SubResource( 1 )
+animation = "Clara_blink"
