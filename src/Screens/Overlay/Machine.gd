@@ -11,6 +11,7 @@ func _ready():
 	$Glow_02.play()
 	$Glow_03.play()
 	$Glow_04.play()
+	$Glow_05.play()
 	pass # Replace with function body.
 
 
