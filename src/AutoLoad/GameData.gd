@@ -8,7 +8,7 @@ extends Node
 enum PIECES {HEART, MOON, SQUARE, STAR, TEAR}
 var hand_cursor = load("res://src/assets/final/CURSOR_HAND_1.png")
 
-export var current_selected_pieces = [];
+export var current_selected_pieces: = [];
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,5 +18,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	pass
