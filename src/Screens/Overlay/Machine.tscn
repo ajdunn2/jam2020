@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/assets/final/OVERLAY_MACHINE_01.png" type="Texture" id=1]
 [ext_resource path="res://src/assets/final/BACKGROUND_01.png" type="Texture" id=2]
@@ -25,42 +25,36 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
-"name": "New Anim",
+"name": "Glow_5",
 "speed": 2.0
 } ]
+
+[sub_resource type="CanvasItemMaterial" id=7]
+blend_mode = 1
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "Glow_04",
-"speed": 0.07
+"speed": 1.0
 } ]
+
+[sub_resource type="CanvasItemMaterial" id=9]
+blend_mode = 1
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Glow_03",
-"speed": 2.0
+"speed": 3.0
 } ]
+
+[sub_resource type="CanvasItemMaterial" id=8]
+blend_mode = 1
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -203,22 +197,27 @@ texture = ExtResource( 1 )
 position = Vector2( 1755.69, 578.132 )
 rotation = -3.72529e-09
 frames = SubResource( 1 )
-animation = "New Anim"
+animation = "Glow_5"
 
 [node name="Glow_04" type="AnimatedSprite" parent="."]
+modulate = Color( 0.976471, 0.466667, 0.466667, 1 )
 self_modulate = Color( 1, 1, 1, 0.572549 )
+material = SubResource( 7 )
 position = Vector2( 1434.81, 331.664 )
 frames = SubResource( 2 )
 animation = "Glow_04"
 
 [node name="Glow_03" type="AnimatedSprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.45098 )
+self_modulate = Color( 0.988235, 0.466667, 0.466667, 0.611765 )
+show_behind_parent = true
+material = SubResource( 9 )
 position = Vector2( 249, 540 )
 frames = SubResource( 3 )
 animation = "Glow_03"
 
 [node name="Glow_02" type="AnimatedSprite" parent="."]
-self_modulate = Color( 0.992157, 0.701961, 0.701961, 0.607843 )
+self_modulate = Color( 0.992157, 0.701961, 0.701961, 0.294118 )
+material = SubResource( 8 )
 position = Vector2( 960, 540 )
 frames = SubResource( 4 )
 animation = "glow_02"
