@@ -30,6 +30,8 @@ func _input(event):
 			timer.set_wait_time(0.2)
 			timer.start()
 			timer.connect("timeout", self, "_on_Timer_timeout")
+	if Input.is_action_pressed("quit_game"):
+			get_tree().quit()
 
 func _on_Timer_timeout():
 	Input.set_custom_mouse_cursor(hand_cursor)
