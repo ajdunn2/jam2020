@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/Screens/Game/Puzzle.gd" type="Script" id=1]
 [ext_resource path="res://src/assets/fonts/Work-Sans/variable/WorkSans-Italic-VF.ttf" type="DynamicFontData" id=2]
@@ -10,8 +10,21 @@
 [ext_resource path="res://src/assets/final/sounds/moon.wav" type="AudioStream" id=8]
 [ext_resource path="res://src/assets/final/PUZZLE_SHAPES_CROSS.png" type="Texture" id=9]
 [ext_resource path="res://src/assets/final/PUZZLE_SHAPES_TICK.png" type="Texture" id=10]
+[ext_resource path="res://src/assets/final/MINDREPAIR_LOGO_Anim1.png" type="Texture" id=11]
+[ext_resource path="res://src/assets/final/MINDREPAIR_LOGO_Anim3.png" type="Texture" id=12]
+[ext_resource path="res://src/assets/final/MINDREPAIR_LOGO_Anim5.png" type="Texture" id=13]
+[ext_resource path="res://src/assets/final/MINDREPAIR_LOGO_Anim2.png" type="Texture" id=14]
+[ext_resource path="res://src/assets/final/MINDREPAIR_LOGO_Anim4.png" type="Texture" id=15]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Logo_anim",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
 size = 89
 font_data = ExtResource( 2 )
 
@@ -29,7 +42,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Logo_anim" type="AnimatedSprite" parent="Screen"]
+self_modulate = Color( 1, 1, 1, 0.545098 )
+position = Vector2( 1520.24, 930.425 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 1 )
+animation = "Logo_anim"
+
 [node name="Game_logo" type="Sprite" parent="Screen"]
+visible = false
 self_modulate = Color( 1, 1, 1, 0.545098 )
 position = Vector2( 1516.37, 930.105 )
 scale = Vector2( 0.4, 0.4 )
@@ -67,7 +88,7 @@ margin_left = 124.0
 margin_top = 184.0
 margin_right = 1654.0
 margin_bottom = 873.0
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Welcome {VISITOR}//
 
 To commence therapy session,
@@ -83,7 +104,7 @@ margin_top = 844.0
 margin_right = 4389.0
 margin_bottom = 1863.0
 rect_scale = Vector2( 0.3, 0.3 )
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 tab_size = 3
 text = "terms and conditions include:
 ₁ Mind Repair Solutions Inc. is not responsible for any side effects
@@ -103,7 +124,7 @@ margin_left = 152.656
 margin_top = 163.28
 margin_right = 1786.66
 margin_bottom = 888.28
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Take some slow, deep breaths.
 
 Try to remember the order of the shapes as they appear.
@@ -138,7 +159,7 @@ margin_left = 176.478
 margin_top = 104.522
 margin_right = 1810.48
 margin_bottom = 1004.52
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "
 
 That wasn't so bad...huh :)"

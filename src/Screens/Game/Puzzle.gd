@@ -16,6 +16,7 @@ export var ai_selected_pieces: = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Screen/Logo_anim.play("Logo_anim")
 	scene_piece = preload("res:///src/Pieces/Piece.tscn")
 	start_new_level(level)
 
