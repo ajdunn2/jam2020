@@ -13,11 +13,12 @@ func _ready():
 	
 	if (gameStates.HOME):
 		$AnimationCamera.play("tv");
-	
+
 	$Glow_02.play()
 	$Glow_03.play()
 	$Glow_04.play()
 	$Glow_05.play()
+	$AnimationBG_blinds.play("light")
 	pass # Replace with function body.
 
 
