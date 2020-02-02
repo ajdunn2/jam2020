@@ -106,19 +106,19 @@ animations = [ {
 
 [sub_resource type="Animation" id=11]
 resource_name = "Puzzle_move"
-length = 15.0
+length = 7.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Puzzle:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4.8, 13.7 ),
+"times": PoolRealArray( 0, 3.4, 6.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 114.556, 13.1694 ), Vector2( 114.556, 30 ), Vector2( 114.556, 13.1694 ) ]
+"values": [ Vector2( 114.556, 13.1694 ), Vector2( 114.556, 40.169 ), Vector2( 114.556, 13.1694 ) ]
 }
 
 [sub_resource type="CanvasItemMaterial" id=12]
@@ -155,7 +155,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 674.942, 369.308 ) ]
+"values": [ Vector2( 674.942, 399.308 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AnimationCamera/Camera2D:rotation_degrees")
@@ -179,7 +179,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0.6, 0.6 ) ]
+"values": [ Vector2( 0.68, 0.68 ) ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -194,7 +194,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.6, 0.6 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.68, 0.68 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimationCamera/Camera2D:position")
@@ -206,7 +206,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 0.25, 1 ),
 "update": 0,
-"values": [ Vector2( 674.942, 369.308 ), Vector2( 960, 540 ) ]
+"values": [ Vector2( 674.942, 399.308 ), Vector2( 960, 540 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AnimationCamera/Camera2D:rotation_degrees")
@@ -301,14 +301,14 @@ position = Vector2( 960, 540 )
 frames = SubResource( 10 )
 animation = "glow_02"
 
+[node name="AnimationPuzzle" type="AnimationPlayer" parent="."]
+anims/Puzzle_move = SubResource( 11 )
+
 [node name="Puzzle" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.607843 )
 position = Vector2( 114.556, 13.1694 )
 rotation = 0.0453786
 scale = Vector2( 0.6, 0.6 )
-
-[node name="AnimationPuzzle" type="AnimationPlayer" parent="Puzzle"]
-anims/Puzzle_move = SubResource( 11 )
 
 [node name="Clara" parent="." instance=ExtResource( 17 )]
 modulate = Color( 1, 1, 1, 0 )
@@ -317,6 +317,7 @@ position = Vector2( 0, 4.83008 )
 [node name="Touch" parent="." instance=ExtResource( 19 )]
 
 [node name="Glow_06" type="AnimatedSprite" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0.215686 )
 material = SubResource( 12 )
 position = Vector2( 686.178, 375.601 )
@@ -330,10 +331,10 @@ anims/tv = SubResource( 14 )
 anims/tv_to_room = SubResource( 15 )
 
 [node name="Camera2D" type="Camera2D" parent="AnimationCamera"]
-position = Vector2( 674.942, 369.308 )
+position = Vector2( 674.942, 399.308 )
 rotation = 0.0453786
 rotating = true
 current = true
-zoom = Vector2( 0.6, 0.6 )
+zoom = Vector2( 0.68, 0.68 )
 
 [editable path="Clara"]

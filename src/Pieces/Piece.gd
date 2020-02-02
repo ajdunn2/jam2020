@@ -92,4 +92,4 @@ func show_controls_if_last_item():
 	print(last_item);
 	if(last_item):
 		GameData.inputReady = true
-		get_tree().get_root().find_node("Clara", true, false).get_node("Clara_moods").play("Clara_wrong")
+		get_tree().get_root().find_node("Clara", true, false).get_node("Clara_moods").play("Clara_point")

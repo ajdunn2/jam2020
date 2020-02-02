@@ -19,8 +19,8 @@ func _ready():
 	$Glow_04.play()
 	$Glow_05.play()
 	$AnimationBG_blinds.play("light")
-	$Glow_06.play()
-	#$AnimationPuzzle.play("Puzzle")
+	#$Glow_06.play()
+	$AnimationPuzzle.play("Puzzle_move")
 	pass # Replace with function body.
 
 
