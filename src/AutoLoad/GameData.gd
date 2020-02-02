@@ -8,6 +8,8 @@ var timer
 
 var inputReady = false
 
+var count = 0
+
 export var current_selected_pieces: = [];
 
 # Called when the node enters the scene tree for the first time.

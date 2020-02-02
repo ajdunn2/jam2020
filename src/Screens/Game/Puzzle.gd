@@ -20,6 +20,7 @@ func _ready():
 	start_new_level(level)
 
 func start_new_level(num):
+	GameData.count = 0
 	
 	if (num >= LAST_LEVEL):
 		current_puzzle = GAME_PUZZLE.OVER
@@ -96,7 +97,7 @@ func add_rando_pieces(count, ran, level):
 	var x_line = 350 if (count < 5) else 350 - (5 * 300)
 	var extra = 1.0
 	
-	scene_piece.set_meta("type", "gamer")
+	scene_piece.set_meta("type", "game_piece")
 	#scene_piece_instance.set_name("scene")
 	scene_piece_instance.global_position.x = count * 300 + x_line
 	scene_piece_instance.global_position.y = 300 + y_line
@@ -104,6 +105,7 @@ func add_rando_pieces(count, ran, level):
 	scene_piece_instance.hide()
 	scene_piece_instance.time_til_fade = 1.1 * count + extra
 	
+	scene_piece_instance.count = count + 1 
 
 	if (count + 1 == level):
 		scene_piece_instance.last_item = true
