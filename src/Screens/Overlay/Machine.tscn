@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://src/assets/final/OVERLAY_MACHINE_01.png" type="Texture" id=1]
 [ext_resource path="res://src/assets/final/BACKGROUND_01.png" type="Texture" id=2]
@@ -22,6 +22,25 @@
 [ext_resource path="res://src/assets/final/Glow_05_1.png" type="Texture" id=20]
 [ext_resource path="res://src/assets/final/Glow_05_2.png" type="Texture" id=21]
 [ext_resource path="res://src/assets/final/Glow_05_3.png" type="Texture" id=22]
+[ext_resource path="res://src/assets/final/BACKGROUND_lightbeam.png" type="Texture" id=23]
+
+[sub_resource type="CanvasItemMaterial" id=11]
+blend_mode = 1
+
+[sub_resource type="Animation" id=12]
+resource_name = "New Anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
 
 [sub_resource type="CanvasItemMaterial" id=10]
 blend_mode = 1
@@ -191,6 +210,17 @@ modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
 position = Vector2( 960, 540 )
 rotation = -3.72529e-09
 texture = ExtResource( 2 )
+
+[node name="BG_blindslight" type="Sprite" parent="."]
+modulate = Color( 0.380392, 0.94902, 0.74902, 1 )
+self_modulate = Color( 1, 1, 1, 0.278431 )
+material = SubResource( 11 )
+position = Vector2( 1677.21, 327.856 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 23 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BG_blindslight"]
+"anims/New Anim" = SubResource( 12 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
