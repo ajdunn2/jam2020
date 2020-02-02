@@ -33,8 +33,10 @@ _global_script_class_icons={
 [application]
 
 config/name="Mind-Repair-Solutions"
+config/description="Global Game Jam 2020 to the theme of \"Repair\""
 run/main_scene="res://src/Screens/Overlay/Machine.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://src/icon.ico"
 
 [autoload]
 

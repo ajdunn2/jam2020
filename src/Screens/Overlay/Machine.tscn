@@ -320,7 +320,7 @@ animation = "Glow_03"
 [node name="Glow_02" type="AnimatedSprite" parent="."]
 self_modulate = Color( 0.992157, 0.701961, 0.701961, 0.294118 )
 material = SubResource( 9 )
-position = Vector2( -1726.98, 905.43 )
+position = Vector2( 963.02, 547.43 )
 frames = SubResource( 10 )
 animation = "glow_02"
 
