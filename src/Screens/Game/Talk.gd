@@ -13,7 +13,7 @@ func _process(delta):
 	pass
 
 
-func show_talk(string):
+func show_talk(string, float_time = 0.0):
 	$Talkbox.visible = true
 	
 	match string:
@@ -22,8 +22,11 @@ func show_talk(string):
 		"instruct":
 			#$TalkText/Instruct.visible = true
 			pass
+	var wait = 2.0;
+	if (float_time > 0.0):
+		wait = float_time
 	
-	timer.set_wait_time(0.2)
+	timer.set_wait_time(wait)
 	timer.start()
 	timer.connect("timeout", self, "_on_Timer_timeout")
 

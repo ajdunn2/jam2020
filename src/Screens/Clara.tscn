@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://src/assets/final/SPR_clara_blink00006.png" type="Texture" id=1]
 [ext_resource path="res://src/assets/final/SPR_clara_blink00000.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://src/assets/final/SPR_clara_correct00001.png" type="Texture" id=19]
 [ext_resource path="res://src/assets/final/SPR_clara_correct00002.png" type="Texture" id=20]
 [ext_resource path="res://src/assets/final/SPR_clara_point.png" type="Texture" id=21]
+[ext_resource path="res://src/assets/final/SPR_clara_funny1.png" type="Texture" id=22]
 [ext_resource path="res://src/assets/final/SPR_clara_correct00000.png" type="Texture" id=23]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -52,7 +53,15 @@ animations = [ {
 "loop": true,
 "name": "Clara_point",
 "speed": 0.1
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "Clara_funny",
+"speed": 0.7
 } ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 18.4267, 19.7417 )
 
 [node name="Clara" type="Node2D"]
 script = ExtResource( 13 )
@@ -61,5 +70,14 @@ script = ExtResource( 13 )
 material = SubResource( 3 )
 position = Vector2( 1026.56, 565.626 )
 frames = SubResource( 4 )
-animation = "Clara_point"
+animation = "Clara_funny"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 2.75404, 11.8424 )
+scale = Vector2( -8.70806, -13.2385 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -198.236, -32.0747 )
+shape = SubResource( 5 )
 [connection signal="animation_finished" from="Clara_moods" to="." method="_on_Clara_moods_animation_finished"]
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

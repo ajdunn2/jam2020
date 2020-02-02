@@ -29,7 +29,7 @@
 [ext_resource path="res://src/assets/final/Glow_06_PinkGreen1.png" type="Texture" id=27]
 [ext_resource path="res://src/Screens/Game/Talk.tscn" type="PackedScene" id=28]
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=1]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationCamera/Camera2D:offset")
 tracks/0/interp = 1
@@ -79,7 +79,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.68, 0.68 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=2]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationCamera/Camera2D:zoom")
@@ -144,8 +144,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "light"
+[sub_resource type="Animation" id=3]
 length = 20.0
 loop = true
 tracks/0/type = "value"
@@ -173,10 +172,10 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0.388235 ), Color( 1, 1, 1, 0.278431 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 0.270588 ), Color( 1, 1, 1, 0.478431 ), Color( 1, 1, 1, 0.388235 ) ]
 }
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=4]
 blend_mode = 1
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=5]
 resource_name = "Puzzle_move"
 length = 7.0
 loop = true
@@ -193,10 +192,10 @@ tracks/0/keys = {
 "values": [ Vector2( 114.556, 13.1694 ), Vector2( 114.556, 40.169 ), Vector2( 114.556, 13.1694 ) ]
 }
 
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="CanvasItemMaterial" id=6]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
@@ -204,10 +203,10 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=5]
+[sub_resource type="CanvasItemMaterial" id=8]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 18 ) ],
 "loop": true,
@@ -215,10 +214,10 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=7]
+[sub_resource type="CanvasItemMaterial" id=10]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
@@ -226,10 +225,10 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=9]
+[sub_resource type="CanvasItemMaterial" id=12]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
@@ -237,10 +236,10 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=12]
+[sub_resource type="CanvasItemMaterial" id=14]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
 "frames": [ ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": true,
@@ -252,8 +251,8 @@ animations = [ {
 script = ExtResource( 6 )
 
 [node name="AnimationCamera" type="AnimationPlayer" parent="."]
-anims/tv = SubResource( 14 )
-anims/tv_to_room = SubResource( 15 )
+anims/tv = SubResource( 1 )
+anims/tv_to_room = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="AnimationCamera"]
 position = Vector2( 674.942, 399.308 )
@@ -263,18 +262,18 @@ current = true
 zoom = Vector2( 0.68, 0.68 )
 
 [node name="AnimationBG_blinds" type="AnimationPlayer" parent="."]
-anims/light = SubResource( 1 )
+anims/light = SubResource( 3 )
 
 [node name="BG_blinds" type="Sprite" parent="AnimationBG_blinds"]
 modulate = Color( 0.380392, 0.94902, 0.74902, 1 )
 self_modulate = Color( 1, 1, 1, 0.388235 )
-material = SubResource( 2 )
+material = SubResource( 4 )
 position = Vector2( 1677.21, 327.856 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 23 )
 
 [node name="AnimationPuzzle" type="AnimationPlayer" parent="."]
-anims/Puzzle_move = SubResource( 11 )
+anims/Puzzle_move = SubResource( 5 )
 
 [node name="Machine" type="Sprite" parent="."]
 modulate = Color( 0.831373, 0.831373, 0.831373, 1 )
@@ -287,42 +286,42 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 1 )
 
 [node name="Glow_05" type="AnimatedSprite" parent="."]
-material = SubResource( 3 )
+material = SubResource( 6 )
 position = Vector2( 1776.22, 589.247 )
 rotation = -3.72529e-09
-frames = SubResource( 4 )
+frames = SubResource( 7 )
 animation = "Glow_5"
 
 [node name="Glow_04" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 0.631373, 0.631373, 1 )
 self_modulate = Color( 1, 1, 1, 0.572549 )
-material = SubResource( 5 )
+material = SubResource( 8 )
 position = Vector2( 1434.81, 331.664 )
-frames = SubResource( 6 )
+frames = SubResource( 9 )
 animation = "Glow_04"
 
 [node name="Glow_03" type="AnimatedSprite" parent="."]
 modulate = Color( 0.870588, 0.623529, 0.623529, 0.819608 )
 self_modulate = Color( 0.870588, 0.623529, 0.623529, 0.819608 )
-material = SubResource( 7 )
+material = SubResource( 10 )
 position = Vector2( 249, 540 )
-frames = SubResource( 8 )
+frames = SubResource( 11 )
 animation = "Glow_03"
 
 [node name="Glow_02" type="AnimatedSprite" parent="."]
 self_modulate = Color( 0.992157, 0.701961, 0.701961, 0.294118 )
-material = SubResource( 9 )
+material = SubResource( 12 )
 position = Vector2( 960, 540 )
-frames = SubResource( 10 )
+frames = SubResource( 13 )
 animation = "glow_02"
 
 [node name="Glow_06" type="AnimatedSprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.215686 )
-material = SubResource( 12 )
+material = SubResource( 14 )
 position = Vector2( 686.178, 375.601 )
 rotation = 0.0453786
 scale = Vector2( 0.685517, 0.685517 )
-frames = SubResource( 13 )
+frames = SubResource( 15 )
 animation = "Glow_06"
 
 [node name="Puzzle" parent="." instance=ExtResource( 5 )]
