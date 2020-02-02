@@ -4,14 +4,19 @@ class_name Puzzle
 # Declare member variables here. Examples:
 var scene_piece = null
 
+var need_to_setup_level = true
+
+enum GAME_PUZZLE {LOGO, PLAY, INSTRUCTIONS, WRONG, CORRECT, OVER}
+var current_puzzle = GAME_PUZZLE.LOGO
+
 ######### START AT LEVEL 1 ###############
-var level = 3 
+var level = 2
 export var ai_selected_pieces: = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	scene_piece = preload("res:///src/Pieces/Piece.tscn")
-	start_new_level(1)
+	start_new_level(level)
 
 
 func start_new_level(num):
@@ -22,25 +27,62 @@ func start_new_level(num):
 		
 	ai_selected_pieces = []
 	GameData.current_selected_pieces = []
-	
-	for i in range(level):
-		var ran = make_rando_pieces()
-		add_rando_pieces(i, ran)
+	need_to_setup_level = true
 
+
+func setup_new_level():
+	for i in range(level):
+		var random = make_rando_pieces()
+		add_rando_pieces(i, random)
+	need_to_setup_level = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # warning-ignore:unused_argument
 func _process(delta):
-	if Input.is_action_pressed("ui_up"):
-		print("right")
-	# algo
-	compare_the_selection()
+	# load specific menu
+	match current_puzzle:
+		GAME_PUZZLE.LOGO:
+			$Logo.visible = true
+			$Instructions.visible = false
+			$Correct.visible = false
+			$Wrong.visible = false
+			$Over.visible = false
 
+		GAME_PUZZLE.PLAY:
+			$Logo.visible = false
+			$Instructions.visible = false
+			$Correct.visible = false
+			$Wrong.visible = false
+			$Over.visible = false
+
+			if (need_to_setup_level):
+				setup_new_level()
+			compare_the_selection()
+
+		GAME_PUZZLE.INSTRUCTIONS:
+			$Logo.visible = false
+			$Instructions.visible = true
+			$Correct.visible = false
+			$Wrong.visible = false
+			$Over.visible = false
+
+		GAME_PUZZLE.WRONG:
+			$Logo.visible = false
+			$Instructions.visible = false
+			$Correct.visible = false
+			$Wrong.visible = true
+			$Over.visible = false
+
+		GAME_PUZZLE.CORRECT:
+			$Logo.visible = false
+			$Instructions.visible = false
+			$Correct.visible = true
+			$Wrong.visible = false
+			$Over.visible = false
 
 func make_rando_pieces():
 	var ran = randi() % GameData.PIECES.size()
 	return ran
-
 
 func add_rando_pieces(count, ran):
 	ai_selected_pieces.append(ran)
@@ -87,11 +129,46 @@ func compare_the_selection():
 
 func level_complete(correct):
 	if (correct):
+		change_puzzle(GAME_PUZZLE.CORRECT)
 		level = level + 1
 		# do not go above 10
 		start_new_level(level)
 	else:
+		change_puzzle(GAME_PUZZLE.WRONG)
 		level -= 1
 		# do not go below 1
 		start_new_level(level)
 
+
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed:
+				match current_puzzle:
+					GAME_PUZZLE.LOGO:
+						change_puzzle(GAME_PUZZLE.INSTRUCTIONS)
+					GAME_PUZZLE.PLAY:
+						pass
+					GAME_PUZZLE.WRONG:
+						change_puzzle(GAME_PUZZLE.PLAY)
+					GAME_PUZZLE.CORRECT:
+						change_puzzle(GAME_PUZZLE.PLAY)
+					GAME_PUZZLE.INSTRUCTIONS:
+						change_puzzle(GAME_PUZZLE.PLAY)
+						
+						
+func change_puzzle(new_puzzle):
+	current_puzzle = new_puzzle
+	match new_puzzle:
+		GAME_PUZZLE.LOGO:
+			pass
+		GAME_PUZZLE.PLAY:
+			pass
+		GAME_PUZZLE.WRONG:
+			get_tree().get_root().find_node("Clara", true, false).get_node("Clara_moods").play("Clara_wrong")
+		GAME_PUZZLE.CORRECT:
+			pass
+		GAME_PUZZLE.INSTRUCTIONS:
+			pass
+		GAME_PUZZLE.OVER:
+			pass

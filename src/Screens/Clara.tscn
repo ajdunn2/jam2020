@@ -29,23 +29,23 @@ shader = SubResource( 2 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "Clara_wrong",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Clara_blink",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Clara_wrong",
 "speed": 5.0
 } ]
 
 [node name="Clara" type="Node2D"]
 script = ExtResource( 13 )
 
-[node name="Clara_blink" type="AnimatedSprite" parent="."]
-self_modulate = Color( 0.619608, 0.65098, 0.737255, 1 )
+[node name="Clara_moods" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )
 position = Vector2( 1026.56, 565.626 )
 frames = SubResource( 4 )
 animation = "Clara_blink"
+[connection signal="animation_finished" from="Clara_moods" to="." method="_on_Clara_moods_animation_finished"]
