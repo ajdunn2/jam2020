@@ -177,6 +177,7 @@ func change_puzzle(new_puzzle):
 			GameData.inputReady = false
 			get_tree().get_root().find_node("Clara", true, false).get_node("Clara_moods").play("Clara_wrong")
 		GAME_PUZZLE.CORRECT:
+			get_tree().get_root().find_node("Clara", true, false).get_node("Clara_moods").play("Clara_correct")
 			GameData.inputReady = false
 			pass
 		GAME_PUZZLE.INSTRUCTIONS:
