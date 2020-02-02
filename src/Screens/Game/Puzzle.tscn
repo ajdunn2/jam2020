@@ -12,7 +12,7 @@
 [ext_resource path="res://src/assets/final/PUZZLE_SHAPES_TICK.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
-size = 110
+size = 89
 font_data = ExtResource( 2 )
 
 [node name="Puzzle" type="Node2D"]
@@ -63,27 +63,33 @@ visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Logo"]
 modulate = Color( 0.333333, 0.627451, 0.443137, 1 )
-margin_left = 258.388
-margin_top = 173.183
-margin_right = 1892.39
-margin_bottom = 1073.18
+margin_left = 124.0
+margin_top = 184.0
+margin_right = 1654.0
+margin_bottom = 873.0
 custom_fonts/normal_font = SubResource( 1 )
-text = "HELLO {VISITOR},
-We are here to help!
-Thank you very much for stopping by..."
+text = "Welcome {VISITOR}//
+
+To commence therapy session,
+touch this screen to agree to terms and conditions."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Logo"]
 modulate = Color( 0.333333, 0.627451, 0.443137, 1 )
-margin_left = 371.227
-margin_top = 925.274
-margin_right = 2671.23
-margin_bottom = 1825.27
-rect_scale = Vector2( 0.448723, 0.440002 )
+margin_left = 70.0
+margin_top = 844.0
+margin_right = 4389.0
+margin_bottom = 1863.0
+rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "touch screen to agree to this all terms and conditions"
+tab_size = 3
+text = "terms and conditions include:
+₁ Mind Repair Solutions Inc. is not responsible for any side effects
+ associated with experimental Repair-O-Sphere™ technology. 
+₂ known possible side effects include resurfacing of past trauma, an uncontrolable impulse to scream in public and sudden astute knowledge of the region of South Australia.
+₃ Please refrain from poking our clinic members, although they are adorable."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -93,14 +99,16 @@ visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Instructions"]
 modulate = Color( 0.333333, 0.627451, 0.443137, 1 )
-margin_left = 176.478
-margin_top = 104.522
-margin_right = 1810.48
-margin_bottom = 1004.52
+margin_left = 152.656
+margin_top = 163.28
+margin_right = 1786.66
+margin_bottom = 888.28
 custom_fonts/normal_font = SubResource( 1 )
-text = "Slow your breath. It'll make things easier.
+text = "Take some slow, deep breathes.
 
-All you need to do is repeat after us, touch the icons you see above..."
+Try to remember the order of the shapes as they appear.
+
+Touch the screen to begin."
 __meta__ = {
 "_edit_use_anchors_": false
 }
