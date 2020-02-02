@@ -9,9 +9,11 @@ var need_to_setup_level = true
 enum GAME_PUZZLE {LOGO, PLAY, INSTRUCTIONS, WRONG, CORRECT, OVER}
 var current_puzzle = GAME_PUZZLE.LOGO
 
+var final_game_over = false
+
 ######### START AT LEVEL 1 ###############
 var level = 1
-const LAST_LEVEL = 10
+const LAST_LEVEL = 8
 export var ai_selected_pieces: = []
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +27,15 @@ func start_new_level(num):
 	
 	if (num >= LAST_LEVEL):
 		current_puzzle = GAME_PUZZLE.OVER
+		
+		for i in $Game.get_children():
+			i.queue_free()
+		ai_selected_pieces = []
+		GameData.current_selected_pieces = []
+		need_to_setup_level = false
+		
+		final_game_over = true
+		
 	else:
 		level = num
 		
@@ -84,6 +95,13 @@ func _process(delta):
 			$Correct.visible = true
 			$Wrong.visible = false
 			$Over.visible = false
+			
+		GAME_PUZZLE.OVER:
+			$Logo.visible = false
+			$Instructions.visible = false
+			$Correct.visible = false
+			$Wrong.visible = false
+			$Over.visible = true
 
 func make_rando_pieces():
 	var ran = randi() % GameData.PIECES.size()

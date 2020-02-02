@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://src/assets/final/OVERLAY_MACHINE_01.png" type="Texture" id=1]
 [ext_resource path="res://src/assets/final/BACKGROUND_01.png" type="Texture" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://src/assets/final/MINDREPAIR_LOGO_Anim4.png" type="Texture" id=32]
 [ext_resource path="res://src/assets/final/SPR_Feet2.png" type="Texture" id=33]
 [ext_resource path="res://src/assets/final/SPR_Feet1.png" type="Texture" id=34]
+[ext_resource path="res://src/Screens/Game/Talk.tscn" type="PackedScene" id=35]
 
 [sub_resource type="Animation" id=1]
 resource_name = "light"
@@ -111,7 +112,7 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="SpriteFrames" id=17]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
 "frames": [ ExtResource( 34 ), ExtResource( 33 ) ],
 "loop": true,
@@ -119,7 +120,7 @@ animations = [ {
 "speed": 0.3
 } ]
 
-[sub_resource type="SpriteFrames" id=16]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ ExtResource( 28 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 30 ) ],
 "loop": true,
@@ -127,8 +128,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=11]
-resource_name = "Puzzle_move"
+[sub_resource type="Animation" id=13]
 length = 7.0
 loop = true
 tracks/0/type = "value"
@@ -144,10 +144,10 @@ tracks/0/keys = {
 "values": [ Vector2( 114.556, 13.1694 ), Vector2( 114.556, 40.169 ), Vector2( 114.556, 13.1694 ) ]
 }
 
-[sub_resource type="CanvasItemMaterial" id=12]
+[sub_resource type="CanvasItemMaterial" id=14]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
 "frames": [ ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": true,
@@ -155,7 +155,7 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=16]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationCamera/Camera2D:offset")
 tracks/0/interp = 1
@@ -205,7 +205,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.68, 0.68 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=17]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationCamera/Camera2D:zoom")
@@ -327,7 +327,7 @@ animation = "glow_02"
 [node name="Feet_anim" type="AnimatedSprite" parent="."]
 position = Vector2( 813.828, 879.635 )
 rotation = -3.72529e-09
-frames = SubResource( 17 )
+frames = SubResource( 11 )
 animation = "Feet_anim"
 
 [node name="Logo_anim_small" type="AnimatedSprite" parent="."]
@@ -335,11 +335,11 @@ self_modulate = Color( 1, 1, 1, 0.478431 )
 position = Vector2( 1081.61, 348.02 )
 rotation = 0.109956
 scale = Vector2( 0.0949123, 0.0949123 )
-frames = SubResource( 16 )
+frames = SubResource( 12 )
 animation = "Logo_anim"
 
 [node name="AnimationPuzzle" type="AnimationPlayer" parent="."]
-anims/Puzzle_move = SubResource( 11 )
+anims/Puzzle_move = SubResource( 13 )
 
 [node name="Puzzle" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.607843 )
@@ -351,24 +351,21 @@ scale = Vector2( 0.6, 0.6 )
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 4.83008 )
 
-[node name="Clara_moods" parent="Clara" index="0"]
-animation = "default"
-
 [node name="Touch" parent="." instance=ExtResource( 19 )]
 
 [node name="Glow_06" type="AnimatedSprite" parent="."]
 visible = false
 self_modulate = Color( 1, 1, 1, 0.215686 )
-material = SubResource( 12 )
+material = SubResource( 14 )
 position = Vector2( 686.178, 375.601 )
 rotation = 0.0453786
 scale = Vector2( 0.685517, 0.685517 )
-frames = SubResource( 13 )
+frames = SubResource( 15 )
 animation = "Glow_06"
 
 [node name="AnimationCamera" type="AnimationPlayer" parent="."]
-anims/tv = SubResource( 14 )
-anims/tv_to_room = SubResource( 15 )
+anims/tv = SubResource( 16 )
+anims/tv_to_room = SubResource( 17 )
 
 [node name="Camera2D" type="Camera2D" parent="AnimationCamera"]
 position = Vector2( 674.942, 399.308 )
@@ -376,5 +373,7 @@ rotation = 0.0453786
 rotating = true
 current = true
 zoom = Vector2( 0.68, 0.68 )
+
+[node name="Talk" parent="." instance=ExtResource( 35 )]
 
 [editable path="Clara"]
