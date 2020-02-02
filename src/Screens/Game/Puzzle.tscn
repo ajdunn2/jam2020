@@ -16,7 +16,7 @@
 [ext_resource path="res://src/assets/final/MINDREPAIR_LOGO_Anim2.png" type="Texture" id=14]
 [ext_resource path="res://src/assets/final/MINDREPAIR_LOGO_Anim4.png" type="Texture" id=15]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 11 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 13 ) ],
 "loop": true,
@@ -46,7 +46,7 @@ __meta__ = {
 self_modulate = Color( 1, 1, 1, 0.545098 )
 position = Vector2( 1520.24, 930.425 )
 scale = Vector2( 0.4, 0.4 )
-frames = SubResource( 1 )
+frames = SubResource( 3 )
 animation = "Logo_anim"
 
 [node name="Game_logo" type="Sprite" parent="Screen"]
@@ -83,7 +83,7 @@ stream = ExtResource( 6 )
 visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Logo"]
-modulate = Color( 0.333333, 0.627451, 0.443137, 1 )
+modulate = Color( 0.2, 0.423529, 0.282353, 1 )
 margin_left = 124.0
 margin_top = 184.0
 margin_right = 1654.0
@@ -98,7 +98,7 @@ __meta__ = {
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Logo"]
-modulate = Color( 0.333333, 0.627451, 0.443137, 1 )
+modulate = Color( 0.2, 0.423529, 0.282353, 1 )
 margin_left = 70.0
 margin_top = 844.0
 margin_right = 4389.0
@@ -116,10 +116,9 @@ __meta__ = {
 }
 
 [node name="Instructions" type="Node2D" parent="."]
-visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Instructions"]
-modulate = Color( 0.333333, 0.627451, 0.443137, 1 )
+modulate = Color( 0.2, 0.423529, 0.282353, 1 )
 margin_left = 152.656
 margin_top = 163.28
 margin_right = 1786.66
