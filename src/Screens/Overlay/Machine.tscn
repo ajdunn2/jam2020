@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://src/assets/final/OVERLAY_MACHINE_01.png" type="Texture" id=1]
 [ext_resource path="res://src/assets/final/BACKGROUND_01.png" type="Texture" id=2]
@@ -23,6 +23,10 @@
 [ext_resource path="res://src/assets/final/Glow_05_2.png" type="Texture" id=21]
 [ext_resource path="res://src/assets/final/Glow_05_3.png" type="Texture" id=22]
 [ext_resource path="res://src/assets/final/BACKGROUND_lightbeam.png" type="Texture" id=23]
+[ext_resource path="res://src/assets/final/Glow_06_PinkGreen2.png" type="Texture" id=24]
+[ext_resource path="res://src/assets/final/Glow_06_PinkGreen3.png" type="Texture" id=25]
+[ext_resource path="res://src/assets/final/Glow_06_PinkGreen4.png" type="Texture" id=26]
+[ext_resource path="res://src/assets/final/Glow_06_PinkGreen1.png" type="Texture" id=27]
 
 [sub_resource type="Animation" id=1]
 resource_name = "light"
@@ -117,7 +121,18 @@ tracks/0/keys = {
 "values": [ Vector2( 114.556, 13.1694 ), Vector2( 114.556, 30 ), Vector2( 114.556, 13.1694 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="CanvasItemMaterial" id=12]
+blend_mode = 1
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "Glow_06",
+"speed": 2.0
+} ]
+
+[sub_resource type="Animation" id=14]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationCamera/Camera2D:offset")
 tracks/0/interp = 1
@@ -167,7 +182,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.6, 0.6 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=15]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationCamera/Camera2D:zoom")
@@ -246,9 +261,9 @@ anims/light = SubResource( 1 )
 
 [node name="BG_blinds" type="Sprite" parent="AnimationBG_blinds"]
 modulate = Color( 0.380392, 0.94902, 0.74902, 1 )
-self_modulate = Color( 1, 1, 1, 0.342272 )
+self_modulate = Color( 1, 1, 1, 0.388235 )
 material = SubResource( 2 )
-position = Vector2( 1666.49, 325.071 )
+position = Vector2( 1677.21, 327.856 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 23 )
 
@@ -301,9 +316,18 @@ position = Vector2( 0, 4.83008 )
 
 [node name="Touch" parent="." instance=ExtResource( 19 )]
 
+[node name="Glow_06" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.215686 )
+material = SubResource( 12 )
+position = Vector2( 686.178, 375.601 )
+rotation = 0.0453786
+scale = Vector2( 0.685517, 0.685517 )
+frames = SubResource( 13 )
+animation = "Glow_06"
+
 [node name="AnimationCamera" type="AnimationPlayer" parent="."]
-anims/tv = SubResource( 12 )
-anims/tv_to_room = SubResource( 13 )
+anims/tv = SubResource( 14 )
+anims/tv_to_room = SubResource( 15 )
 
 [node name="Camera2D" type="Camera2D" parent="AnimationCamera"]
 position = Vector2( 674.942, 369.308 )
