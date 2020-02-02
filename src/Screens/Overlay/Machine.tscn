@@ -24,7 +24,7 @@
 [ext_resource path="res://src/assets/final/Glow_05_3.png" type="Texture" id=22]
 [ext_resource path="res://src/assets/final/BACKGROUND_lightbeam.png" type="Texture" id=23]
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=1]
 resource_name = "light"
 length = 20.0
 loop = true
@@ -53,13 +53,13 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0.388235 ), Color( 1, 1, 1, 0.278431 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 0.270588 ), Color( 1, 1, 1, 0.478431 ), Color( 1, 1, 1, 0.388235 ) ]
 }
 
-[sub_resource type="CanvasItemMaterial" id=11]
+[sub_resource type="CanvasItemMaterial" id=2]
 blend_mode = 1
 
-[sub_resource type="CanvasItemMaterial" id=10]
+[sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
@@ -67,10 +67,10 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=7]
+[sub_resource type="CanvasItemMaterial" id=5]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 18 ) ],
 "loop": true,
@@ -78,10 +78,10 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=9]
+[sub_resource type="CanvasItemMaterial" id=7]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
@@ -89,10 +89,10 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=8]
+[sub_resource type="CanvasItemMaterial" id=9]
 blend_mode = 1
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
@@ -100,7 +100,7 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=11]
 resource_name = "Puzzle_move"
 length = 15.0
 loop = true
@@ -117,8 +117,7 @@ tracks/0/keys = {
 "values": [ Vector2( 114.556, 13.1694 ), Vector2( 114.556, 30 ), Vector2( 114.556, 13.1694 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "tv"
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationCamera/Camera2D:offset")
 tracks/0/interp = 1
@@ -168,7 +167,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.6, 0.6 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=13]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationCamera/Camera2D:zoom")
@@ -243,12 +242,12 @@ rotation = -3.72529e-09
 texture = ExtResource( 2 )
 
 [node name="AnimationBG_blinds" type="AnimationPlayer" parent="."]
-anims/light = SubResource( 12 )
+anims/light = SubResource( 1 )
 
 [node name="BG_blinds" type="Sprite" parent="AnimationBG_blinds"]
 modulate = Color( 0.380392, 0.94902, 0.74902, 1 )
 self_modulate = Color( 1, 1, 1, 0.342272 )
-material = SubResource( 11 )
+material = SubResource( 2 )
 position = Vector2( 1666.49, 325.071 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 23 )
@@ -258,56 +257,53 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 1 )
 
 [node name="Glow_05" type="AnimatedSprite" parent="."]
-material = SubResource( 10 )
+material = SubResource( 3 )
 position = Vector2( 1776.22, 589.247 )
 rotation = -3.72529e-09
-frames = SubResource( 1 )
+frames = SubResource( 4 )
 animation = "Glow_5"
 
 [node name="Glow_04" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 0.631373, 0.631373, 1 )
 self_modulate = Color( 1, 1, 1, 0.572549 )
-material = SubResource( 7 )
+material = SubResource( 5 )
 position = Vector2( 1434.81, 331.664 )
-frames = SubResource( 2 )
+frames = SubResource( 6 )
 animation = "Glow_04"
 
 [node name="Glow_03" type="AnimatedSprite" parent="."]
 modulate = Color( 0.870588, 0.623529, 0.623529, 0.819608 )
 self_modulate = Color( 0.870588, 0.623529, 0.623529, 0.819608 )
-material = SubResource( 9 )
+material = SubResource( 7 )
 position = Vector2( 249, 540 )
-frames = SubResource( 3 )
+frames = SubResource( 8 )
 animation = "Glow_03"
 
 [node name="Glow_02" type="AnimatedSprite" parent="."]
 self_modulate = Color( 0.992157, 0.701961, 0.701961, 0.294118 )
-material = SubResource( 8 )
+material = SubResource( 9 )
 position = Vector2( 960, 540 )
-frames = SubResource( 4 )
+frames = SubResource( 10 )
 animation = "glow_02"
 
 [node name="Puzzle" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.607843 )
-position = Vector2( 114.556, 27.9198 )
+position = Vector2( 114.556, 13.1694 )
 rotation = 0.0453786
 scale = Vector2( 0.6, 0.6 )
 
 [node name="AnimationPuzzle" type="AnimationPlayer" parent="Puzzle"]
-anims/Puzzle_move = SubResource( 13 )
+anims/Puzzle_move = SubResource( 11 )
 
 [node name="Clara" parent="." instance=ExtResource( 17 )]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 4.83008 )
 
-[node name="Clara_blink" parent="Clara" index="0"]
-self_modulate = Color( 1, 1, 1, 1 )
-
 [node name="Touch" parent="." instance=ExtResource( 19 )]
 
 [node name="AnimationCamera" type="AnimationPlayer" parent="."]
-anims/tv = SubResource( 5 )
-anims/tv_to_room = SubResource( 6 )
+anims/tv = SubResource( 12 )
+anims/tv_to_room = SubResource( 13 )
 
 [node name="Camera2D" type="Camera2D" parent="AnimationCamera"]
 position = Vector2( 674.942, 369.308 )
