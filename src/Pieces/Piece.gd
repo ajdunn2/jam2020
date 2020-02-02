@@ -7,6 +7,8 @@ var time_til_fade = 2.0
 
 var last_item = false
 
+var count = 99
+
 var tear = preload("res://src/assets/puzzle/PUZZLE_SHAPES_TEAR.png")
 var heart = preload("res://src/assets/puzzle/PUZZLE_SHAPES_HEART.png")
 var moon = preload("res://src/assets/puzzle/PUZZLE_SHAPES_MOON.png")
@@ -15,6 +17,8 @@ var star = preload("res://src/assets/puzzle/PUZZLE_SHAPES_STAR.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$ShapePiece2.visible = true
+	$ShapePiece3.visible = false
 	fade_up()
 	#change_piece(GameData.PIECES.HEART)
 	#pass # Replace with function body.
@@ -23,6 +27,17 @@ func _ready():
 func _process(delta):
 	if $AnimationPlayer.is_playing():
 		show()
+		
+	if(GameData.count == count):
+		#pass
+#		print(count)
+#		print(GameData.count)
+		
+		$ShapePiece2.visible = false
+		$ShapePiece3.visible = true
+	else:
+		pass
+		#$ShapePiece2.visible = true
 
 func change_piece(num):
 	piece = num
