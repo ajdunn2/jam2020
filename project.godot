@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Puzzle",
 "language": "GDScript",
 "path": "res://src/Screens/Game/Puzzle.gd"
+}, {
+"base": "Node2D",
+"class": "Talk",
+"language": "GDScript",
+"path": "res://src/Screens/Game/Talk.gd"
 } ]
 _global_script_class_icons={
 "Piece": "",
-"Puzzle": ""
+"Puzzle": "",
+"Talk": ""
 }
 
 [application]
