@@ -177,11 +177,18 @@ func change_puzzle(new_puzzle):
 		GAME_PUZZLE.WRONG:
 			GameData.inputReady = false
 			get_tree().get_root().find_node("Clara", true, false).get_node("Clara_moods").play("Clara_wrong")
+			# TALK
+			get_tree().get_root().find_node("Talk", true, false).show_talk("wrong", 2.5)
 		GAME_PUZZLE.CORRECT:
+			# ANIMATE
 			get_tree().get_root().find_node("Clara", true, false).get_node("Clara_moods").play("Clara_correct")
+			# TALK
+			get_tree().get_root().find_node("Talk", true, false).show_talk("correct", 2.5)
 			GameData.inputReady = false
 			pass
 		GAME_PUZZLE.INSTRUCTIONS:
 			pass
 		GAME_PUZZLE.OVER:
+			# TALK
+			get_tree().get_root().find_node("Talk", true, false).show_talk("over", 2.5)
 			pass

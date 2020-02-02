@@ -24,6 +24,25 @@ visible = false
 position = Vector2( 1428.25, 234.44 )
 texture = ExtResource( 2 )
 
+[node name="TalkInstruct" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2" type="Sprite" parent="TalkInstruct"]
+position = Vector2( 1448.5, 174.726 )
+scale = Vector2( 1.06429, 0.673693 )
+texture = ExtResource( 2 )
+
+[node name="Instruct" type="RichTextLabel" parent="TalkInstruct"]
+margin_left = 1223.94
+margin_top = 119.799
+margin_right = 1645.94
+margin_bottom = 221.799
+custom_fonts/normal_font = SubResource( 1 )
+text = "Use your memory. Which shapes did you see?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TalkText" type="Node2D" parent="."]
 
 [node name="Annoyed" type="RichTextLabel" parent="TalkText"]
@@ -34,6 +53,43 @@ margin_right = 1655.0
 margin_bottom = 914.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "WHat!!!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Correct" type="RichTextLabel" parent="TalkText"]
+visible = false
+margin_left = 1233.0
+margin_top = 812.0
+margin_right = 1655.0
+margin_bottom = 914.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Interesting..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong" type="RichTextLabel" parent="TalkText"]
+visible = false
+margin_left = 1233.0
+margin_top = 812.0
+margin_right = 1655.0
+margin_bottom = 914.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Focus... use  your mind... >_<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Over" type="RichTextLabel" parent="TalkText"]
+visible = false
+margin_left = 1233.0
+margin_top = 812.0
+margin_right = 1655.0
+margin_bottom = 914.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "I believed in you! On your way to recovery!!
+;-))))"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -29,8 +29,11 @@ func _process(delta):
 	
 	if (GameData.inputReady == false):
 		$Touch.visible = false
+		get_tree().get_root().find_node("Talk", true, false).hide_talk_i()
 	else:
 		$Touch.visible = true
+		get_tree().get_root().find_node("Talk", true, false).show_talk_i()
+	
 
 func _input(event):
 	if event is InputEventMouseButton && (gameState == gameStates.HOME):
