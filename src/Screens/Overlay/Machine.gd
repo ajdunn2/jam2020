@@ -25,7 +25,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	
+	if (GameData.inputReady == false):
+		$Touch.visible = false
+	else:
+		$Touch.visible = true
 
 func _input(event):
 	if event is InputEventMouseButton && (gameState == gameStates.HOME):
@@ -35,5 +39,5 @@ func _input(event):
 				$AnimationCamera.play("tv_to_room");
 
 func start_game():
-	print('game playing')
+	#print('game playing')
 	gameState = gameStates.GAME

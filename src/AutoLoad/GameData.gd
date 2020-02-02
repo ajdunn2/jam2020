@@ -6,6 +6,8 @@ var hand_cursor2 = load("res://src/assets/final/CURSOR_HAND_1.png")
 var hand_cursor = load("res://src/assets/final/CURSOR_HAND_2.png")
 var timer
 
+var inputReady = false
+
 export var current_selected_pieces: = [];
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +18,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#print(inputReady)
 	pass
 
 func _input(event):

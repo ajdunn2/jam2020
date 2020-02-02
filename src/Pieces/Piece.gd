@@ -5,6 +5,8 @@ var piece = null
 
 var time_til_fade = 2.0
 
+var last_item = false
+
 var tear = preload("res://src/assets/puzzle/PUZZLE_SHAPES_TEAR.png")
 var heart = preload("res://src/assets/puzzle/PUZZLE_SHAPES_HEART.png")
 var moon = preload("res://src/assets/puzzle/PUZZLE_SHAPES_MOON.png")
@@ -68,3 +70,11 @@ func hide():
 	
 func show():
 	$ShapePiece.visible = true
+	
+	
+func show_controls_if_last_item():
+	print("shoe");
+	print(last_item);
+	if(last_item):
+		GameData.inputReady = true
+		get_tree().get_root().find_node("Clara", true, false).get_node("Clara_moods").play("Clara_wrong")

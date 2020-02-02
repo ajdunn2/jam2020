@@ -10,7 +10,8 @@ enum GAME_PUZZLE {LOGO, PLAY, INSTRUCTIONS, WRONG, CORRECT, OVER}
 var current_puzzle = GAME_PUZZLE.LOGO
 
 ######### START AT LEVEL 1 ###############
-var level = 2
+var level = 1
+const LAST_LEVEL = 10
 export var ai_selected_pieces: = []
 
 # Called when the node enters the scene tree for the first time.
@@ -18,22 +19,24 @@ func _ready():
 	scene_piece = preload("res:///src/Pieces/Piece.tscn")
 	start_new_level(level)
 
-
 func start_new_level(num):
-	level  = num
 	
-	for i in $Game.get_children():
-		i.queue_free()
+	if (num >= LAST_LEVEL):
+		current_puzzle = GAME_PUZZLE.OVER
+	else:
+		level = num
 		
-	ai_selected_pieces = []
-	GameData.current_selected_pieces = []
-	need_to_setup_level = true
+		for i in $Game.get_children():
+			i.queue_free()
+		ai_selected_pieces = []
+		GameData.current_selected_pieces = []
+		need_to_setup_level = true
 
 
 func setup_new_level():
 	for i in range(level):
 		var random = make_rando_pieces()
-		add_rando_pieces(i, random)
+		add_rando_pieces(i, random, level)
 	need_to_setup_level = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -84,7 +87,7 @@ func make_rando_pieces():
 	var ran = randi() % GameData.PIECES.size()
 	return ran
 
-func add_rando_pieces(count, ran):
+func add_rando_pieces(count, ran, level):
 	ai_selected_pieces.append(ran)
 	
 	var scene_piece_instance = scene_piece.instance()
@@ -94,12 +97,16 @@ func add_rando_pieces(count, ran):
 	var extra = 1.0
 	
 	scene_piece.set_meta("type", "gamer")
-	scene_piece_instance.set_name("scene")
+	#scene_piece_instance.set_name("scene")
 	scene_piece_instance.global_position.x = count * 300 + x_line
 	scene_piece_instance.global_position.y = 300 + y_line
 	scene_piece_instance.change_piece(ran)
 	scene_piece_instance.hide()
 	scene_piece_instance.time_til_fade = 1.1 * count + extra
+	
+
+	if (count + 1 == level):
+		scene_piece_instance.last_item = true
 	$Game.add_child(scene_piece_instance)
 
 	
@@ -155,8 +162,8 @@ func _input(event):
 						change_puzzle(GAME_PUZZLE.PLAY)
 					GAME_PUZZLE.INSTRUCTIONS:
 						change_puzzle(GAME_PUZZLE.PLAY)
-						
-						
+
+
 func change_puzzle(new_puzzle):
 	current_puzzle = new_puzzle
 	match new_puzzle:
@@ -165,8 +172,10 @@ func change_puzzle(new_puzzle):
 		GAME_PUZZLE.PLAY:
 			pass
 		GAME_PUZZLE.WRONG:
+			GameData.inputReady = false
 			get_tree().get_root().find_node("Clara", true, false).get_node("Clara_moods").play("Clara_wrong")
 		GAME_PUZZLE.CORRECT:
+			GameData.inputReady = false
 			pass
 		GAME_PUZZLE.INSTRUCTIONS:
 			pass
